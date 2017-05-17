@@ -17,8 +17,8 @@ public:
 	char* SearchNumber(char Name[]);  
 	void DelList();
 	bool IsEmpty(); 
-	bool ExistName(char Name[]);
-	bool ExistNumber(char Number[]);
+	bool ExistName(char keyName[]);
+	bool ExistNumber(char keyNumber[]);
 
 
 	//Объявление итераторов

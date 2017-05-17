@@ -33,12 +33,13 @@ int main()
 		cout << "11)Просмотр элементов списка" << endl;
 		cout << "12)Считавание элементов списка из файла" << endl;
 		cout << "13)Создать файл и записать туда элементы списка" << endl;
-		cout << "14)Сортировка списка" << endl << endl;
+		cout << "14)Сортировка списка" << endl;
+		cout << "15)Просмотр элементов списка с конца" << endl << endl;
 
 		cout << "Нажмите 0 для выхода из программы" << endl << endl;
 		cin >> mn;
 
-		if (mn < 0 || mn>14)
+		if (mn < 0 || mn>15)
 		{
 			cout << "Ошибка! Необходимо ввести число от 1 до 10 или 0 для выхода." << endl << endl;
 			system("pause");
@@ -574,7 +575,7 @@ int main()
 			}
 			else
 			{
-				if (iter != NULL){
+				if (iter != NULL) {
 					a.Sort();
 					cout << "Список отсортирован." << endl << endl;
 					cout << "Чтобы просмотреть список, выберите соответствующий пункт в меню" << endl << endl;
@@ -590,7 +591,33 @@ int main()
 			system("cls");
 			break;
 		}
+		
+		case 15:
+		{
+			system("cls");
+			iter = a.getTail();
+			if (a.IsEmpty())
+			{
+				cout << "Список пуст." << endl << endl;
+				system("pause");
+			}
+			else
+			{
+				cout << "Элементы списка:" << endl << endl;
+				while (iter)
+				{
+					cout << a.getInf(iter) << ' ';
+					iter = a.getPrev(iter);
 
+				}
+				cout << endl << endl;
+				system("pause");
+			}
+
+			system("cls");
+			break;
+
+		}
 
 		default: break;
 		}

@@ -33,14 +33,14 @@ int main()
 		cout << "11)Просмотр элементов списка" << endl;
 		cout << "12)Считавание элементов списка из файла" << endl;
 		cout << "13)Создать файл и записать туда элементы списка" << endl;
-		cout << "14)Сортировка списка" << endl;
+		cout << "14)Сортировка списка" << endl << endl;
 
-		cout << "Нажмите 0 для выхода из программы" << endl;
+		cout << "Нажмите 0 для выхода из программы" << endl << endl;
 		cin >> mn;
 
-		if (mn < 0 || mn>16)
+		if (mn < 0 || mn>14)
 		{
-			cout << "Ошибка! Необходимо ввести число от 1 до 10 или 0 для выхода." << endl;
+			cout << "Ошибка! Необходимо ввести число от 1 до 10 или 0 для выхода." << endl << endl;
 			system("pause");
 			cin.clear();
 			cin.ignore();
@@ -67,7 +67,7 @@ int main()
 					if (error == 1)
 					{
 						error = 0;
-						cout << "\n Некорректное значение. Введите число" << endl;
+						cout << "\n Некорректное значение. Введите число" << endl << endl;
 						system("pause");
 					}
 
@@ -78,7 +78,7 @@ int main()
 			}
 			a.PushTail(data);
 			system("cls");
-			cout << "Элемент был успешно добавлен." << endl;
+			cout << "Элемент был успешно добавлен." << endl << endl;
 			system("pause");
 			system("cls");
 			break;
@@ -100,7 +100,7 @@ int main()
 					if (error == 1)
 					{
 						error = 0;
-						cout << "\n Некорректное значение. Введите число" << endl;
+						cout << "\n Некорректное значение. Введите число" << endl << endl;
 						system("pause");
 					}
 
@@ -111,7 +111,7 @@ int main()
 			}
 			a.PushHead(data);
 			system("cls");
-			cout << "Элемент был успешно добавлен." << endl;
+			cout << "Элемент был успешно добавлен." << endl << endl;
 			system("pause");
 			system("cls");
 			break;
@@ -121,19 +121,19 @@ int main()
 			int flag = 0;
 			system("cls");
 			error = 1;
-			while (flag != 1)
+			while (flag != 1 && error == 1)
 			{
 				cout << "Введите количество элементов:" << endl;
-				if ((cin >> amount) && (cin.good()))
+				if ((cin >> amount) && (cin.good()) && amount > 0)
 				{
 					flag = 1;
+					error = 0;
 				}
 				else
 				{
 					if (error == 1)
 					{
-						error = 0;
-						cout << "\n Некорректное значение. Выполните операцию заново." << endl;
+						cout << "\n Некорректное значение. Выполните операцию заново." << endl << endl;
 						system("pause");
 					}
 					cin.clear();
@@ -142,15 +142,15 @@ int main()
 				}
 			}
 
-			while (flag != 0)
+			while (flag != 0 && error == 0)
 			{
 				cout << "Введите максимальное значение:" << endl;
-				if ((amount > 0) && (cin >> range) && (cin.good()))
+				if ((amount > 0) && (cin >> range) && (cin.good()) && range > 0)
 				{
 					flag = 0;
 					a.RandPush(amount, range);
 					system("cls");
-					cout << "Элементы были успешно добавлены." << endl;
+					cout << "Элементы были успешно добавлены." << endl << endl;
 					system("pause");
 					system("cls");
 				}
@@ -159,7 +159,7 @@ int main()
 					if (error == 1)
 					{
 						error = 0;
-						cout << "\n Некорректное значение. Выполните операцию заново." << endl;
+						cout << "\n Некорректное значение. Выполните операцию заново." << endl << endl;
 						system("pause");
 					}
 					cin.clear();
@@ -176,7 +176,7 @@ int main()
 			system("cls");
 			if (a.IsEmpty())
 			{
-				cout << "Элементов в списке нет" << endl;
+				cout << "Элементов в списке нет" << endl << endl;
 				system("pause");
 				system("cls");
 				break;
@@ -194,7 +194,7 @@ int main()
 						if (error == 1)
 						{
 							error = 0;
-							cout << "\n Некорректное значение. Введите число";
+							cout << "\n Некорректное значение. Введите число" << endl << endl;
 							system("pause");
 						}
 						cin.clear();
@@ -217,7 +217,7 @@ int main()
 							if (error == 1)
 							{
 								error = 0;
-								cout << "\n Некорректное значение. Введите число";
+								cout << "\n Некорректное значение. Введите число" << endl << endl;
 								system("pause");
 							}
 							cin.clear();
@@ -228,7 +228,7 @@ int main()
 					else
 					{
 						system("cls");
-						cout << "Такого элемента нет" << endl;
+						cout << "Такого элемента нет" << endl << endl;
 						system("pause");
 						break;
 					}
@@ -237,13 +237,13 @@ int main()
 			system("cls");
 			break;
 		}
-		
+
 		case 5:
 		{
 			system("cls");
 			if (a.IsEmpty())
 			{
-				cout << "Список пуст" << endl;
+				cout << "Список пуст" << endl << endl;
 				system("pause");
 				system("cls");
 				break;
@@ -262,7 +262,7 @@ int main()
 							== 1)
 						{
 							error = 0;
-							cout << "\n Некорректное значение. Введите число";
+							cout << "\n Некорректное значение. Введите число" << endl << endl;
 							system("pause");
 						}
 						cin.clear();
@@ -285,7 +285,7 @@ int main()
 							if (error == 1)
 							{
 								error = 0;
-								cout << "\n Некорректное значение. Введите число";
+								cout << "\n Некорректное значение. Введите число" << endl << endl;
 								system("pause");
 							}
 							cin.clear();
@@ -296,7 +296,7 @@ int main()
 					else
 					{
 						system("cls");
-						cout << "Такого элемента нет" << endl;
+						cout << "Такого элемента нет" << endl << endl;
 						system("pause");
 						break;
 					}
@@ -313,13 +313,13 @@ int main()
 			if (a.IsEmpty())
 			{
 				system("cls");
-				cout << "Невозможно удалить элемент, список пуст. Добавьте элементы." << endl;
+				cout << "Невозможно удалить элемент, список пуст. Добавьте элементы." << endl << endl;
 				system("pause");
 			}
 			else
 			{
 				int p = a.PopHead();
-				cout << "Элемент " << p << " был успешно удален" << endl;
+				cout << "Элемент " << p << " был успешно удален" << endl << endl;
 				system("pause");
 			}
 			system("cls");
@@ -332,13 +332,13 @@ int main()
 			if (a.IsEmpty())
 			{
 				system("cls");
-				cout << "Невозможно удалить элемент, список пуст. Добавьте элементы." << endl;
+				cout << "Невозможно удалить элемент, список пуст. Добавьте элементы." << endl << endl;
 				system("pause");
 			}
 			else
 			{
 				int p = a.PopTail();
-				cout << "Элемент " << p << " был успешно удален" << endl;
+				cout << "Элемент " << p << " был успешно удален" << endl << endl;
 				system("pause");
 			}
 			system("cls");
@@ -351,7 +351,7 @@ int main()
 			if (a.IsEmpty())
 			{
 				system("cls");
-				cout << "Список пуст" << endl;
+				cout << "Список пуст" << endl << endl;
 				system("pause");
 			}
 			else
@@ -369,7 +369,7 @@ int main()
 						if (error == 1)
 						{
 							error = 0;
-							cout << "\n Некорректное значение. Введите число";
+							cout << "\n Некорректное значение. Введите число" << endl << endl;
 							system("pause");
 						}
 						cin.clear();
@@ -382,12 +382,12 @@ int main()
 				{
 					a.DelKey(data);
 					system("cls");
-					cout << "Элемент удален" << endl;
+					cout << "Элемент удален" << endl << endl;
 					system("pause");
 				}
 				else
 				{
-					cout << "Список пуст." << endl;
+					cout << "Список пуст." << endl << endl;
 					system("pause");
 				}
 			}
@@ -406,13 +406,13 @@ int main()
 			system("cls");
 			if (a.IsEmpty())
 			{
-				cout << "Список пуст." << endl;
+				cout << "Список пуст." << endl << endl;
 				system("pause");
 			}
 			else
 			{
 				a.Clear();
-				cout << "Список был успешно очищен." << endl;
+				cout << "Список был успешно очищен." << endl << endl;
 				system("pause");
 			}
 			system("cls");
@@ -426,7 +426,7 @@ int main()
 			if (a.IsEmpty())
 			{
 				system("cls");
-				cout << "Список пуст. Добавьте элементы для поиска." << endl;
+				cout << "Список пуст. Добавьте элементы для поиска." << endl << endl;
 				system("pause");
 			}
 			else
@@ -436,11 +436,11 @@ int main()
 				{
 					if (a.Search(data) == false)
 					{
-						cout << "Элемент не был найден." << endl;
+						cout << "Элемент не был найден." << endl << endl;
 					}
 					else
 					{
-						cout << "Элемент " << data << " находится в списке." << endl;
+						cout << "Элемент " << data << " находится в списке." << endl << endl;
 					}
 
 				}
@@ -449,7 +449,7 @@ int main()
 					if (error == 1)
 					{
 						error = 0;
-						cout << "\n Некорректное значение. Введите число" << endl;
+						cout << "\n Некорректное значение. Введите число" << endl << endl;
 						system("pause");
 					}
 
@@ -470,19 +470,19 @@ int main()
 			iter = a.getHead();
 			if (a.IsEmpty())
 			{
-				cout << "Список пуст." << endl;
+				cout << "Список пуст." << endl << endl;
 				system("pause");
 			}
 			else
 			{
-				cout << "Элементы списка:" << endl;
+				cout << "Элементы списка:" << endl << endl;
 				while (iter)
 				{
 					cout << a.getInf(iter) << ' ';
 					iter = a.getNext(iter);
 
 				}
-				cout << endl;
+				cout << endl << endl;
 				system("pause");
 			}
 
@@ -498,7 +498,7 @@ int main()
 			f.open(name_file, ios::in);
 			if (!f.is_open())
 			{
-				cout << "Ошибка!Такого файла не существует, создайте или введите другое название" << endl;
+				cout << "Ошибка!Такого файла не существует, создайте или введите другое название" << endl << endl;
 				system("pause");
 				cin.clear();
 				cin.ignore();
@@ -510,7 +510,7 @@ int main()
 				a.PushTail(data);
 			}
 			f.close();
-			cout << "Элементы были считаны из файла" << endl;
+			cout << "Элементы были считаны из файла" << endl << endl;
 			system("pause");
 			cin.clear();
 			cin.ignore();
@@ -536,7 +536,7 @@ int main()
 			f1.open(name_file1, ios::out | ios::trunc);
 			if (!f1.is_open())
 			{
-				cout << "Ошибка при открытии файла" << endl;
+				cout << "Ошибка при открытии файла" << endl << endl;
 				system("pause");
 				cin.clear();
 				cin.ignore();
@@ -553,7 +553,7 @@ int main()
 					f1 << "\n";
 				iter = a.getNext(iter);
 			}
-			cout << "Элементы были добавлены в файл " << name_file1 << endl;
+			cout << "Элементы были добавлены в файл " << name_file1 << endl << endl;
 			system("pause");
 			cin.clear();
 			cin.ignore();
@@ -563,19 +563,29 @@ int main()
 
 		case 14:
 		{
+			iter = a.getHead();
+			iter = a.getNext(iter);
 			system("cls");
 			if (a.IsEmpty())
 			{
 				system("cls");
-				cout << "Список пуст, невозможно отсортировать." << endl;
+				cout << "Список пуст, невозможно отсортировать." << endl << endl;
 				system("pause");
 			}
 			else
 			{
-				a.Sort();
-				cout << "Список отсортирован."<< endl;
-				cout << "Чтобы просмотреть список, выберите соответствующий пункт в меню" << endl;
-				system("pause");
+				if (iter != NULL){
+					a.Sort();
+					cout << "Список отсортирован." << endl << endl;
+					cout << "Чтобы просмотреть список, выберите соответствующий пункт в меню" << endl << endl;
+					system("pause");
+				}
+				else
+				{
+					cout << "В списке один элемент, невозможно отсортировать" << endl << endl;
+					system("pause");
+
+				}
 			}
 			system("cls");
 			break;

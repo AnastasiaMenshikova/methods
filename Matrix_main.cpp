@@ -27,7 +27,7 @@ int _tmain(int argc, _TCHAR* argv[])
 			cin >> mn;
 			if (mn < 0 || mn>6)
 			{
-				cout << "Ошибка! Необходимо ввести число от 1 до 10 или 0 для выхода." << endl << endl;
+				cout << "Ошибка! Необходимо ввести число от 1 до 6 или 0 для выхода." << endl << endl;
 				system("pause");
 				cin.clear();
 				cin.ignore();
